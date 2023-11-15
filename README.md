@@ -1,16 +1,16 @@
-# flutter_responsive
+# Flutter Responsive Design Example
 
-A new Flutter project.
+This repository contains the source code for the example project discussed in my article, "Building Responsive UIs in Flutter: A Short Guide". It's a hands-on guide to building a responsive Flutter application, adapting UI for various screen sizes and orientations.
 
-## Getting Started
+[Medium Article](https://medium.com/@dario-digregorio/building-responsive-uis-in-flutter-a-short-guide-db8edbeeb18e)
 
-This project is a starting point for a Flutter application.
+## Overview
 
-A few resources to get you started if this is your first Flutter project:
+The project showcases an enhanced version of the classic Counter App. It manages multiple counters and features a master-detail interface for larger screens, exemplifying responsive design in Flutter.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Enum-based screen size detection for adaptive layouts
+- Responsive UI components for small, normal, large, and extra-large screens
+- Orientation-aware layouts
+- Master-detail interface optimized for larger screens and landscape mode
