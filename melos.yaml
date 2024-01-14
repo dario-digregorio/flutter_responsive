@@ -6,3 +6,16 @@ packages:
 scripts:
   analyze:
     exec: dart analyze .
+  format:
+    exec: dart format .
+  test:
+    exec: dart test
+  build:
+    exec: flutter build web
+  build_runner:
+    exec: flutter pub run build_runner build --delete-conflicting-outputs
+  build_runner_watch:
+    exec: flutter pub run build_runner watch --delete-conflicting-outputs
+  build_runner_clean:
+    exec: flutter pub run build_runner clean
+  
