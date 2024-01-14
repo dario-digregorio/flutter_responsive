@@ -13,7 +13,15 @@ class FlutterDeckExample extends StatelessWidget {
     // This is an entry point for the Flutter Deck app.
     return FlutterDeckApp(
       configuration: const FlutterDeckConfiguration(),
-      slides: [BlankSlide()],
+      speakerInfo: const FlutterDeckSpeakerInfo(
+        name: 'Dario Digregorio',
+        description: 'info@dario-digregorio.de',
+        imagePath: 'assets/profile.jpeg',
+        socialHandle: '@digregoriodario',
+      ),
+      slides: [
+        BlankSlide(),
+      ],
     );
   }
 }

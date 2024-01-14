@@ -1,7 +1,8 @@
 name: flutter_responsive
 
 packages:
-  - packages/*
+  - app/*
+  - deck/*
 
 scripts:
   analyze:
@@ -10,6 +11,8 @@ scripts:
     exec: dart format .
   test:
     exec: dart test
+  get:
+    exec: flutter pub get
   build:
     exec: flutter build web
   build_runner:

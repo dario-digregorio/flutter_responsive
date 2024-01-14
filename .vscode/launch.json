@@ -5,10 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "flutter_responsive",
+            "name": "app debug",
             "request": "launch",
             "type": "dart",
             "cwd": "${workspaceFolder}\\app",
+        },
+        {
+            "name": "deck debug",
+            "request": "launch",
+            "type": "dart",
+            "cwd": "${workspaceFolder}\\deck",
         },
         {
             "name": "flutter_responsive (profile mode)",
