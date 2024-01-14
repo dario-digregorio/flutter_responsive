@@ -8,13 +8,15 @@
             "name": "app debug",
             "request": "launch",
             "type": "dart",
-            "cwd": "${workspaceFolder}\\app",
+            // "cwd": "${workspaceFolder}\\app",
+            "program": "${workspaceFolder}\\app\\lib\\main.dart"
         },
         {
             "name": "deck debug",
             "request": "launch",
             "type": "dart",
-            "cwd": "${workspaceFolder}\\deck",
+            // "cwd": "${workspaceFolder}\\deck",
+            "program": "${workspaceFolder}\\deck\\lib\\main.dart"
         },
         {
             "name": "flutter_responsive (profile mode)",
