@@ -12,7 +12,11 @@ class FlutterDeckExample extends StatelessWidget {
   Widget build(BuildContext context) {
     // This is an entry point for the Flutter Deck app.
     return FlutterDeckApp(
-      configuration: const FlutterDeckConfiguration(),
+      configuration: const FlutterDeckConfiguration(
+          footer: FlutterDeckFooterConfiguration(
+        showFooter: true,
+        showSocialHandle: true,
+      )),
       speakerInfo: const FlutterDeckSpeakerInfo(
         name: 'Dario Digregorio',
         description: 'info@dario-digregorio.de',
