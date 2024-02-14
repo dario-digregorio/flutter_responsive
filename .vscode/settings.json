@@ -1,0 +1,8 @@
+{
+    "cSpell.words": [
+        "placemarks"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
+}

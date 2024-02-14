@@ -23,7 +23,7 @@ class FlutterDeckExample extends StatelessWidget {
         imagePath: 'assets/profile.jpeg',
         socialHandle: '@digregoriodario',
       ),
-      slides: [
+      slides: const [
         BlankSlide(),
       ],
     );
