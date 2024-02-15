@@ -30,6 +30,7 @@ class CounterDetailPage extends ConsumerWidget {
         onPressed: () =>
             ref.read(countersProvider.notifier).incrementCounter(index),
         tooltip: 'Increment',
+        heroTag: null,
         child: const Icon(Icons.add),
       ),
     );

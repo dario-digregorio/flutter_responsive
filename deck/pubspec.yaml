@@ -14,6 +14,10 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   flutter_deck: ^0.11.0
+  flutter_responsive: 
+    path: ../app/
+
+
 
 dev_dependencies:
   flutter_test:

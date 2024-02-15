@@ -3,7 +3,7 @@ import 'package:flutter_responsive/app.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const ProviderScope(child: CounterApp()));
+  runApp(const CounterApp());
 }
 
 class CounterApp extends StatelessWidget {
@@ -11,14 +11,16 @@ class CounterApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Ultimate Counter App',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        primarySwatch: Colors.blue,
+    return ProviderScope(
+      child: MaterialApp(
+        title: 'Ultimate Counter App',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          useMaterial3: true,
+          primarySwatch: Colors.blue,
+        ),
+        home: const CounterAppContent(),
       ),
-      home: const CounterAppContent(),
     );
   }
 }

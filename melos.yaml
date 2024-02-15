@@ -1,8 +1,9 @@
 name: flutter_responsive
 
 packages:
-  - app/*
-  - deck/*
+  - '*'
+  - app/**
+  - deck/**
 
 scripts:
   analyze:

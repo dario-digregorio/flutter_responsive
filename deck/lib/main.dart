@@ -1,3 +1,4 @@
+import 'package:deck/slides/responsive_title_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -13,10 +14,12 @@ class FlutterDeckExample extends StatelessWidget {
     // This is an entry point for the Flutter Deck app.
     return FlutterDeckApp(
       configuration: const FlutterDeckConfiguration(
+          controls:
+              FlutterDeckControlsConfiguration(presenterToolbarVisible: false),
           footer: FlutterDeckFooterConfiguration(
-        showFooter: true,
-        showSocialHandle: true,
-      )),
+            showFooter: true,
+            showSocialHandle: true,
+          )),
       speakerInfo: const FlutterDeckSpeakerInfo(
         name: 'Dario Digregorio',
         description: 'info@dario-digregorio.de',
@@ -24,6 +27,7 @@ class FlutterDeckExample extends StatelessWidget {
         socialHandle: '@digregoriodario',
       ),
       slides: const [
+        ResponsiveTitleSlide(),
         BlankSlide(),
       ],
     );
