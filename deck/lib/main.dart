@@ -1,5 +1,6 @@
 import 'package:deck/slides/about_slide.dart';
 import 'package:deck/slides/image_slide.dart';
+import 'package:deck/slides/intro_slide.dart';
 import 'package:deck/slides/platforms_slide.dart';
 import 'package:deck/slides/responsive_challanges_slide.dart';
 import 'package:deck/slides/thank_you_slide.dart';
@@ -31,11 +32,12 @@ class FlutterDeckExample extends StatelessWidget {
         socialHandle: '@digregoriodario',
       ),
       slides: const [
-        ThankYouSlide(),
+        IntroSlide(),
         AboutSlide(),
         PlatformsSlide(),
         ImageSlide(),
         ResponsiveChallangesSlide(),
+        ThankYouSlide(),
       ],
     );
   }
