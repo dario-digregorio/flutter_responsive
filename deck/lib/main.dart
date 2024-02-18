@@ -1,4 +1,7 @@
-import 'package:deck/slides/responsive_title_slide.dart';
+import 'package:deck/slides/about_slide.dart';
+import 'package:deck/slides/image_slide.dart';
+import 'package:deck/slides/platforms_slide.dart';
+import 'package:deck/slides/responsive_challanges_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
@@ -18,7 +21,7 @@ class FlutterDeckExample extends StatelessWidget {
               FlutterDeckControlsConfiguration(presenterToolbarVisible: false),
           footer: FlutterDeckFooterConfiguration(
             showFooter: true,
-            showSocialHandle: true,
+            showSocialHandle: false,
           )),
       speakerInfo: const FlutterDeckSpeakerInfo(
         name: 'Dario Digregorio',
@@ -27,8 +30,10 @@ class FlutterDeckExample extends StatelessWidget {
         socialHandle: '@digregoriodario',
       ),
       slides: const [
-        ResponsiveTitleSlide(),
-        BlankSlide(),
+        AboutSlide(),
+        PlatformsSlide(),
+        ImageSlide(),
+        ResponsiveChallangesSlide(),
       ],
     );
   }
