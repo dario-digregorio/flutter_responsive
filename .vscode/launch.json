@@ -8,29 +8,39 @@
             "name": "app debug",
             "request": "launch",
             "type": "dart",
-            // "cwd": "${workspaceFolder}\\app",
-            "program": "${workspaceFolder}\\app\\lib\\main.dart"
+            "cwd": "app/",
+            "program": "lib/main.dart"
         },
         {
             "name": "deck debug",
             "request": "launch",
             "type": "dart",
-            // "cwd": "${workspaceFolder}\\deck",
-            "program": "${workspaceFolder}\\deck\\lib\\main.dart"
+            "cwd": "deck/",
+            "program": "lib/main.dart"
         },
         {
-            "name": "flutter_responsive (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile",
-            "cwd": "${workspaceFolder}\\app",
-        },
-        {
-            "name": "flutter_responsive (release mode)",
+            "name": "deck (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release",
-            "cwd": "${workspaceFolder}\\app",
+            "cwd": "deck/",
+            "program": "lib/main.dart"
+        },
+        {
+            "name": "app (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "cwd": "app/",
+            "program": "lib/main.dart"
+        },
+        {
+            "name": "app (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "cwd": "app/",
+            "program": "lib/main.dart"
         }
     ]
 }
