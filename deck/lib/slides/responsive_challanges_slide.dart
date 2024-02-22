@@ -16,11 +16,11 @@ class ResponsiveChallangesSlide extends FlutterDeckSlideWidget {
         useSteps: false,
         items: const [
           'Many different Form Factors (Phone, Tablet, Desktop, Foldable, ...)',
-          'Screen Orientation',
           'Notches, Cutouts, Punch holes',
           'Scaling UI and Text for accessibility',
           'Different behaviors for different platforms',
-          'Supporting RTL and LTR languages'
+          'Supporting RTL and LTR languages',
+          'Screen Orientation',
         ],
       ),
     );

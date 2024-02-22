@@ -34,7 +34,7 @@ class AboutSlide extends FlutterDeckSlideWidget {
                     Text('Dario Digregorio',
                         style: Theme.of(context).textTheme.displayMedium),
                     const SizedBox(height: 8),
-                    Text('Senior Flutter Developer',
+                    Text('Senior Flutter & Web Developer @NTT Data Germany',
                         style: Theme.of(context).textTheme.headlineLarge),
                     Text('Indie Developer',
                         style: Theme.of(context).textTheme.headlineLarge),
@@ -47,7 +47,7 @@ class AboutSlide extends FlutterDeckSlideWidget {
                 style: Theme.of(context).textTheme.headlineMedium),
             Text('• Love creating intuitiv, adaptable and responsive Apps',
                 style: Theme.of(context).textTheme.headlineMedium),
-            Text('• Released my first App "Yawa" in 2022 🎉',
+            Text('• Released my first App "Yawa" in 2023 🎉',
                 style: Theme.of(context).textTheme.headlineMedium)
           ],
         ),

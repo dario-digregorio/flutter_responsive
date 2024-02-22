@@ -46,11 +46,11 @@ class ThankYouSlide extends FlutterDeckSlideWidget {
                             child: Column(
                               children: [
                                 Image.asset(
-                                  'assets/qrcode_github.png',
+                                  'assets/qrcode_yawa.png',
                                   width: 250,
                                 ),
                                 const SizedBox(height: 16),
-                                Text('Flutter Heroes Repo',
+                                Text('My App: Yawa',
                                     style: Theme.of(context)
                                         .textTheme
                                         .headlineMedium),

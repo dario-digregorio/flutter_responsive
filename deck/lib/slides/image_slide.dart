@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 class ImageSlide extends FlutterDeckSlideWidget {
@@ -17,7 +16,7 @@ class ImageSlide extends FlutterDeckSlideWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Let\'s do it!',
+                Text('Let\'s built for all platforms!',
                     style: Theme.of(context).textTheme.displayLarge),
                 const SizedBox(height: 20),
                 Image.asset(
