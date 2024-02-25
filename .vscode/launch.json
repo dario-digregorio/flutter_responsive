@@ -8,21 +8,18 @@
             "name": "flutter_responsive",
             "request": "launch",
             "type": "dart",
-            // "cwd": "${workspaceFolder}\\app",
         },
         {
             "name": "flutter_responsive (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile",
-            // "cwd": "${workspaceFolder}\\app",
         },
         {
             "name": "flutter_responsive (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release",
-            // "cwd": "${workspaceFolder}\\app",
         }
     ]
 }
