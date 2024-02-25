@@ -19,7 +19,7 @@ If you have any questions, feedback, or suggestions, feel free to reach out to m
   - [Setup and Key Insights](#setup-and-key-insights)
     - [Recommended Emulators/Simulators or Devices](#recommended-emulatorssimulators-or-devices)
     - [Your App doesn't support a Platform?](#your-app-doesnt-support-a-platform)
-      - [Some more alternatives:](#some-more-alternatives)
+      - [Some alternatives:](#some-alternatives)
   - [Foundation for Responsive Design](#foundation-for-responsive-design)
     - [Mobile First](#mobile-first)
     - [Screen-based Breakpoints](#screen-based-breakpoints)
@@ -100,10 +100,10 @@ Android Resizable Emulator:
 What If Your App Doesn't Support a Platform or you can not build on that platform?
 Depending on the platform you are targeting, you might not be able to build or test your app on that platform. For example, if you are developing on Windows, you won't be able to build for iOS.
 
-#### Some more alternatives:
-- Use a cloud-based service like Codemagic, Bitrise, or GitHub Actions to build and test your app on different platforms.
+#### Some alternatives:
 - MacOS (Designed for iPad) or the iPadOS (Stage Manager) are great alternatives to test your iOS app as with a resizable window without building it nativly for MacOS.
-- Use different physical devices to test your app on a platform you can't build for.
+- Use a cloud-based service like Codemagic, Bitrise, or GitHub Actions to build and test your app on different platforms.
+- Create a version of your app that removes dependencies that are not supported on the platform you are targeting and use that version only to test the responsiveness of your app
 
 ## Foundation for Responsive Design
 
@@ -144,10 +144,10 @@ bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
 ```
 
 ### Style File
-Having a style file with your app's colors, fonts, and text styles will help you maintain a consistent look and feel across your app. This will also help you in scaling your UI and text effectively when needed.
+Having a style file with your app's colors, fonts, and text styles will help you maintain a consistent look and feel across your app. This will also help you in scaling your UI and text effectively when needed for different touch targets.
 
 ## Basic Layout
-We’ll be enhancing the classic Counter App to showcase responsive design in Flutter. The goal is to manage multiple counters and introduce a `master-detail` interface for larger screens.
+We’ll be enhancing the classic Counter App to showcase responsive design in Flutter. The goal is to manage multiple counters and introduce a `master-detail` interface for larger screens. Take a look into the repository to find out how the different topics have been implemented in detail.
 
 ### Layout Foundation
 We create a directory `pages` where we place all widgets which define a screen for a mobile device. Since we are using a Master-Detail design, we will define a `counters_page.dart` and a `counter_detail_page.dart`.
@@ -182,7 +182,7 @@ class _CounterAppState extends State<CounterApp> {
 ```
 Here, we’re using different navigation widgets based on the screen size — a NavigationBar for smaller screens and a NavigationRail for larger ones. Unfortunately it is a bit tricky using NavigationRail together with NavigationBar because Scaffold has only an input for a bottomNavigationBar. With the underscore we specify which layout should be shown on default.
 
-Maybe you noticed the `isPage` flag. This flag is used for multiple purposes for example, to decide if the Counter Detail page should be pushed to the Navigation Stack or not.
+Maybe you noticed the `isPage` flag. This flag is used for multiple purposes like to decide if the Counter Detail page should be pushed to the Navigation Stack or not.
 
 ### Adapting to Orientation Changes
 What about when users flip their phones to landscape? Using Dart’s Record feature, we can elegantly handle multiple conditions, adapting our layout to both screen size and orientation. You can react to more variables by adding them to a Record.
@@ -256,6 +256,7 @@ if (screenSize == ScreenSize.large || screenSize == ScreenSize.extraLarge) {
 }
 ```
 ![Responsive Navigation](docs/flutter_responsive_navigation.gif)
+
 Wrap the `popUntil` method within a `SchedulerBinding.instance.addPostFrameCallback` to delay its execution until after the current build cycle to avoiding build method conflicts.
 
 ### Center ListView with whitespace
@@ -272,11 +273,12 @@ return Scaffold(
 //...
 ));
 ```
+
 ![Responsive List View](docs/flutter_responsive_listview.gif)
 This approach uses again the `ScreenSize` enum to remain consistent.
 
 ## Widgets
-With our basic layout in place, it's time to explore the widgets that will enable us to construct a responsive UI. Flutter offers a rich set of widgets which are essential for creating responsive layouts and widgets. I strongly recommend reading documentation provided by the Flutter Team, which presents an extensive array of widgets in various formats. Here are some resources to get you started:
+With our layout in place, it's time to explore the widgets that will enable us to construct a responsive UI. Flutter offers a rich set of widgets which are essential for creating responsive layouts and widgets. I strongly recommend reading documentation provided by the Flutter Team, which presents an extensive array of widgets in various formats. Here are some resources to get you started:
 - **Flutter Docs:** 
   - [Adaptive Desgin - Layout Widgets](https://docs.flutter.dev/ui/layout/responsive/building-adaptive-apps#layout-widgets)
   - [Widget Catalog - Layout widgets](https://docs.flutter.dev/ui/widgets/layout)
@@ -334,13 +336,13 @@ Building apps with Flutter allows you to use a single codebase for multiple plat
 Flutter's support extends to a variety of platforms, each with its own handling of notches and system interfaces. The key differences lie between Android and iOS, which we'll explore below.
 
 #### Android
-By default, Flutter apps on Android display a black background behind the navigation pill, and when in landscape mode, a black bar appears if the phone has a notch. To modernize the look and eliminate these black bars:
+By default, Flutter apps on Android display a black background behind the navigation pill, and when in landscape mode, a black bar appears if the phone has a notch.
 ![Android Landscape](docs/android_landscape.jpeg)
-In your root widget's `initState()` method, add:
+To modernize the look and eliminate these black bars add following line to your root widget's `initState()`:
 ```dart
    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 ```
-This adjustment extends ListView and bottomNavigationBar to fill the screen, including behind the navigation pill. Avoid using SafeArea if you aim for a fully expanded view.
+This adjustment extends `ListView` and `bottomNavigationBar` to fill the screen, including behind the navigation pill. Avoid using SafeArea if you aim for a fully expanded view.
 
 To address the landscape mode's black bar behind the notch, modify your Android project's main styles.xml file:
 ```dart
@@ -398,17 +400,18 @@ By integrating these tools and features into your development workflow, you can 
 
 
 ## Testing
-Testing your app on different screen sizes is crucial to ensure a consistent user experience. Here’s how you can do it:
+Ensuring your app delivers a consistent user experience across different screen sizes is essential. You can achieve this by conducting tests for various screen dimensions. Here’s how you can do it:
 ``` dart
   group('Test Responsive', () {
-    testWidgets('should have only CountersPage', (WidgetTester tester) async {
-      tester.view.devicePixelRatio = 1.0; // Set to 1.0 have use a specific size
+testWidgets('should have only CountersPage', (WidgetTester tester) async {
+      tester.view.devicePixelRatio = 1.0; // Not necessary but makes it easier to use the same values from our ScreenSizes
       tester.view.physicalSize =
           const Size(500, 800); // to test layout on smaller devices
-      await tester.pumpWidget(const CounterApp());
-      // Test if only CountersPage is shown
+      await tester.pumpWidget(const App());
+
       expect(find.byType(CountersPage), findsOneWidget);
       expect(find.byType(CounterDetailPage), findsNothing);
+      tester.view.reset(); // Don't forget to reset view
     });
 
     testWidgets('should have CountersPage and Detail',
@@ -416,13 +419,15 @@ Testing your app on different screen sizes is crucial to ensure a consistent use
       tester.view.devicePixelRatio = 1.0;
       tester.view.physicalSize =
           const Size(800, 1200); // to test layout on larger devices
-      await tester.pumpWidget(const CounterApp());
-      // Test if both pages are shown
+      await tester.pumpWidget(const App());
+
       expect(find.byType(CountersPage), findsOneWidget);
       expect(find.byType(CounterDetailPage), findsOneWidget);
+      tester.view.reset(); // Don't forget to reset view
     });
   });
 ```
+By default, Flutter Widget Test assumes a physicalSize of `Size(2400.0, 1800.0)` and a devicePixelRatio of 3.0, calculating the actual display size as physicalSize / devicePixelRatio. To test layouts under different conditions, we manually adjust these values and ensure we reset the test view after each test case to avoid unintended carry-over effects. For more details on managing test window settings, refer to this [Flutter issue](https://github.com/flutter/flutter/issues/100836).
 
 ## Tips and Tricks
 Here are some tips, tricks, and misconceptions that you should keep in mind when building responsive apps.
@@ -434,7 +439,7 @@ Typically, a responsive app has had its layout tuned for the available screen si
 #### Adaptive
 Adapting an app to run on different device types, such as mobile and desktop, requires dealing with mouse and keyboard input, as well as touch input. It also means there are different expectations about the app’s visual density, how component selection works (cascading menus vs bottom sheets, for example), using platform-specific features (such as top-level windows), and more.
 
-There is a great article from Craig Labenz about adaptive Design: [How Google Earth supports every use case on earth](https://medium.com/flutter/extreme-ui-adaptability-in-flutter-how-google-earth-supports-every-use-case-on-earth-6db4661e7a17).
+There is a great article how Google achieved this with Google Earth from Craig Labenz about adaptive Design: [How Google Earth supports every use case on earth](https://medium.com/flutter/extreme-ui-adaptability-in-flutter-how-google-earth-supports-every-use-case-on-earth-6db4661e7a17).
 
 ### Helpful Libraries
 Here are some libraries that can help you build responsive apps. I couldn't try them out yet extensively, but they look promising:
@@ -444,8 +449,7 @@ Here are some libraries that can help you build responsive apps. I couldn't try 
 - [wolt_modal_sheet](https://pub.dev/packages/wolt_modal_sheet): A Flutter package that provides a responsive modal sheet widget.
 
 ### Use a State Management Library
-Using a state management library like Riverpod, Provider, or Bloc can help you manage your app's state effectively. This will help you in managing your app's state across different screen sizes and devices. It will also help you in testing your app.
-See my other [Repository](https://github.com/dario-digregorio/flutter_responsive) to know how to use Riverpod in our Counter App.
+Using a state management library like Riverpod, Provider, or Bloc will help you manage your app's state effectively when the app is being resized. This will help you in managing your app's state across different screen sizes and devices. It will also help you in testing your app.
 
 ### Design a Prototype first
 Using Tools like Figma can help you in designing your app for different screen sizes and devices. It will also help you in understanding how your app will look on different devices. Iterating on your design will help you and save you a lot of time.

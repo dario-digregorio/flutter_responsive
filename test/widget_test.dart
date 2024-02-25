@@ -6,18 +6,14 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('should add counter', (WidgetTester tester) async {
-    tester.view.devicePixelRatio = 1.0;
-    tester.view.physicalSize = const Size(600, 1000);
     await tester.pumpWidget(const App());
-
     expect(find.byType(App), findsOneWidget);
-
     // Tap the 'Add Counter'
     await tester.tap(find.text('Add Counter'));
     await tester.pump();
 
     // Verify that counter has been added
-    expect(find.byType(ListTile), findsNWidgets(2));
+    expect(find.byType(ListTile), findsOneWidget);
   });
 
   group('Test Responsive', () {
@@ -29,6 +25,7 @@ void main() {
 
       expect(find.byType(CountersPage), findsOneWidget);
       expect(find.byType(CounterDetailPage), findsNothing);
+      tester.view.reset();
     });
 
     testWidgets('should have CountersPage and Detail',
@@ -40,6 +37,7 @@ void main() {
 
       expect(find.byType(CountersPage), findsOneWidget);
       expect(find.byType(CounterDetailPage), findsOneWidget);
+      tester.view.reset();
     });
   });
 }
