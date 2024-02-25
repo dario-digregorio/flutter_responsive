@@ -1,4 +1,4 @@
-# Building Responsive UIs with Flutter
+# Mastering Responsive UIs in Flutter: The Full Guide
 
 This repository aims to provide a solid foundation for developers looking to create responsive applications with Flutter. Dive into the concepts, explore the widgets, and experiment with the code to build apps that look great on any device.
 
@@ -13,7 +13,7 @@ I also write on Medium and Dev.to, so if you prefer reading on those platforms, 
 If you have any questions, feedback, or suggestions, feel free to reach out to me [on X/Twitter](https://twitter.com/digregoriodario).
 
 ## Table of Contents
-- [Building Responsive UIs with Flutter](#building-responsive-uis-with-flutter)
+- [Mastering Responsive UIs in Flutter: The Full Guide](#mastering-responsive-uis-in-flutter-the-full-guide)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Setup and Key Insights](#setup-and-key-insights)
