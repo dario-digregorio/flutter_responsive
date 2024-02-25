@@ -470,7 +470,7 @@ Using `LayoutBuilder` and `OrientationBuilder` can sometimes get a bit hacky to 
 ## Conclusion
 Our app now dynamically responds to every screen size. The beauty of Flutter is that it provides all the tools necessary for responsive design across any device.
 
-Keen to see these methods in action? Check out my app, **Yawa: Weather & Radar**, on [Android](https://play.google.com/store/apps/details?id=de.digregorio.dario.yawa) and [iOS](https://apps.apple.com/de/app/yawa-weather-forecast/id1626828365) and if you like my Yawa leave a review. This would help me a lot :) ❤️
+Keen to see these methods in action? Check out my app, **Yawa: Weather & Radar**, on [Android](https://play.google.com/store/apps/details?id=de.digregorio.dario.yawa) and [iOS](https://apps.apple.com/de/app/yawa-weather-forecast/id1626828365) and if you like my App Yawa, please leave a review. This would help me a lot :) ❤️
 
 ![Yawa](docs/yawa.gif)
 
