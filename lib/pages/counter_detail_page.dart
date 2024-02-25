@@ -1,35 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_responsive/provider/counter.provider.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_responsive/notifier/counters_notifier.dart';
 
-class CounterDetailPage extends ConsumerWidget {
-  const CounterDetailPage({super.key});
+class CounterDetailPage extends StatelessWidget {
+  final bool isPage;
+
+  const CounterDetailPage({super.key, required this.isPage});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final index = ref.watch(countersIndexProvider);
-    final counters = ref.watch(countersProvider);
-
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      backgroundColor: isPage
+          ? null
+          : Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3),
+      appBar: isPage
+          ? AppBar(
+              title: isPage ? Text(notifier.selectedCounter.label) : null,
+            )
+          : null,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '${counters[index]}',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            ListenableBuilder(
+                listenable: notifier,
+                builder: (context, child) {
+                  return Text(
+                    '${notifier.selectedCounter.value}',
+                    style: Theme.of(context).textTheme.headlineMedium,
+                  );
+                }),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () =>
-            ref.read(countersProvider.notifier).incrementCounter(index),
+        onPressed: () => notifier.increment(),
         tooltip: 'Increment',
+        heroTag: null,
         child: const Icon(Icons.add),
       ),
     );

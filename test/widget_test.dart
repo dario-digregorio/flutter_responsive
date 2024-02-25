@@ -1,30 +1,45 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
+import 'package:flutter_responsive/main.dart';
+import 'package:flutter_responsive/pages/counter_detail_page.dart';
+import 'package:flutter_responsive/pages/counters_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_responsive/main.dart';
-
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const CounterApp());
+  testWidgets('should add counter', (WidgetTester tester) async {
+    tester.view.devicePixelRatio = 1.0;
+    tester.view.physicalSize = const Size(600, 1000);
+    await tester.pumpWidget(const App());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.byType(App), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    // Tap the 'Add Counter'
+    await tester.tap(find.text('Add Counter'));
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that counter has been added
+    expect(find.byType(ListTile), findsNWidgets(2));
+  });
+
+  group('Test Responsive', () {
+    testWidgets('should have only CountersPage', (WidgetTester tester) async {
+      tester.view.devicePixelRatio = 1.0; // Set to 1.0 have use a specific size
+      tester.view.physicalSize =
+          const Size(500, 800); // to test layout on smaller devices
+      await tester.pumpWidget(const App());
+
+      expect(find.byType(CountersPage), findsOneWidget);
+      expect(find.byType(CounterDetailPage), findsNothing);
+    });
+
+    testWidgets('should have CountersPage and Detail',
+        (WidgetTester tester) async {
+      tester.view.devicePixelRatio = 1.0;
+      tester.view.physicalSize =
+          const Size(800, 1200); // to test layout on larger devices
+      await tester.pumpWidget(const App());
+
+      expect(find.byType(CountersPage), findsOneWidget);
+      expect(find.byType(CounterDetailPage), findsOneWidget);
+    });
   });
 }
