@@ -2,15 +2,15 @@
 
 This repository aims to provide a solid foundation for developers looking to create responsive applications with Flutter. Dive into the concepts, explore the widgets, and experiment with the code to build apps that look great on any device.
 
-**Side Note**: This guide sticks to the and avoiding additional packages. However, I recommend using a state management solution like Riverpod to manage your app's state effectively. To keep this example simple we will use the build in class `ChangeNotifier` to update the UI.
+**Side Note**: This guide avoids using additional packages. However, I recommend using at least a state management solution like Riverpod or Bloc to manage your app's state effectively. To keep this guide simple we will use the build in API `ChangeNotifier` to update the UI.
 
-![Responsive](docs/responsive.gif)
+![Responsive](docs/flutter_responsive.gif)
 
 I also write on Medium and Dev.to, so if you prefer reading on those platforms, you can find the article here:
 - [Medium](https://dario-digregorio.medium.com/building-responsive-uis-in-flutter-a-short-guide-db8edbeeb18e)
 - [Dev.to](https://dev.to/dariodigregorio/building-responsive-uis-in-flutter-a-short-guide-5871)
   
-If you have any questions, feedback, or suggestions, feel free to reach out to me [on X/Twitter](https://twitter.com/digregoriodario)
+If you have any questions, feedback, or suggestions, feel free to reach out to me [on X/Twitter](https://twitter.com/digregoriodario).
 
 ## Table of Contents
 - [Building Responsive UIs with Flutter](#building-responsive-uis-with-flutter)
@@ -255,6 +255,7 @@ if (screenSize == ScreenSize.large || screenSize == ScreenSize.extraLarge) {
   });
 }
 ```
+![Responsive Navigation](docs/flutter_responsive_navigation.gif)
 Wrap the `popUntil` method within a `SchedulerBinding.instance.addPostFrameCallback` to delay its execution until after the current build cycle to avoiding build method conflicts.
 
 ### Center ListView with whitespace
@@ -271,6 +272,7 @@ return Scaffold(
 //...
 ));
 ```
+![Responsive List View](docs/flutter_responsive_listview.gif)
 This approach uses again the `ScreenSize` enum to remain consistent.
 
 ## Widgets
@@ -463,8 +465,8 @@ Using `LayoutBuilder` and `OrientationBuilder` can sometimes get a bit hacky to 
 ## Conclusion
 Our app now dynamically responds to every screen size. The beauty of Flutter is that it provides all the tools necessary for responsive design across any device.
 
-Keen to see these methods in action? Check out my app, **Yawa: Weather & Radar**, on [Android](https://play.google.com/store/apps/details?id=de.digregorio.dario.yawa) and [iOS](https://apps.apple.com/de/app/yawa-weather-forecast/id1626828365).
+Keen to see these methods in action? Check out my app, **Yawa: Weather & Radar**, on [Android](https://play.google.com/store/apps/details?id=de.digregorio.dario.yawa) and [iOS](https://apps.apple.com/de/app/yawa-weather-forecast/id1626828365) and if you like my Yawa leave a review. This would help me a lot :) ❤️
 
 ![Yawa](docs/yawa.gif)
 
- And if you have any questions or feedback, feel free to reach out on [Twitter](https://twitter.com/digregoriodario)!
+If you have any questions or feedback, feel free to reach out on [Twitter/X](https://twitter.com/digregoriodario)!
