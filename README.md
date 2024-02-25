@@ -275,6 +275,7 @@ return Scaffold(
 ```
 
 ![Responsive List View](docs/flutter_responsive_listview.gif)
+
 This approach uses again the `ScreenSize` enum to remain consistent.
 
 ## Widgets
