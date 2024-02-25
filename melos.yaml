@@ -1,8 +1,0 @@
-name: flutter_responsive
-
-packages:
-  - packages/*
-
-scripts:
-  analyze:
-    exec: dart analyze .
