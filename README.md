@@ -42,9 +42,9 @@ If you have any questions, feedback, or suggestions, feel free to reach out to m
     - [Notches and OS System Interfaces](#notches-and-os-system-interfaces)
       - [Android](#android)
       - [iOS](#ios)
-  - [Orientation](#orientation)
-    - [How Orientation gets retrieved](#how-orientation-gets-retrieved)
-    - [Device Orientation](#device-orientation)
+    - [Orientation](#orientation)
+      - [How Orientation gets retrieved](#how-orientation-gets-retrieved)
+      - [Device Orientation](#device-orientation)
   - [Debugging](#debugging)
   - [Testing](#testing)
   - [Tips and Tricks](#tips-and-tricks)
@@ -367,12 +367,12 @@ With these tweaks, your app will offer an uninterrupted UI experience on Android
 iOS devices generally handle notches and system interfaces out of the box, requiring no specific alterations as mentioned for Android. However, when using iOS in landscape mode, note that padding for the notch is symmetrically applied to both sides of the screen, a design requirement by iOS that can't be easily overridden.
 ![iOS Landscape](docs/ios_landscape.png)
 
-## Orientation
+### Orientation
 
-### How Orientation gets retrieved
+#### How Orientation gets retrieved
 The orientation of the device can be determined using `MediaQuery.orientationOf(context)`. On mobile devices equipped with a gyroscope, orientation is directly obtained. In contrast, for desktops or web platforms lacking a gyroscope, orientation is inferred from the screen dimensions: `Orientation.portrait` if the height exceeds the width, and `Orientation.landscape` otherwise.
 
-### Device Orientation
+#### Device Orientation
 To lock or set specific orientations for your app, include the following in your root widget's `initState`
 ```dart
  SystemChrome.setPreferredOrientations([
