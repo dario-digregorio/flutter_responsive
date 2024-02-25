@@ -7,8 +7,8 @@ This repository aims to provide a solid foundation for developers looking to cre
 ![Responsive](docs/flutter_responsive.gif)
 
 I also write on Medium and Dev.to, so if you prefer reading on those platforms, you can find the article here:
-- [Medium](https://dario-digregorio.medium.com/building-responsive-uis-in-flutter-a-short-guide-db8edbeeb18e)
-- [Dev.to](https://dev.to/dariodigregorio/building-responsive-uis-in-flutter-a-short-guide-5871)
+- [Medium](https://dario-digregorio.medium.com/mastering-responsive-uis-in-flutter-the-full-guide-7e21acda614e)
+- [Dev.to](https://dev.to/dariodigregorio/mastering-responsive-uis-in-flutter-the-full-guide-3g6i)
   
 If you have any questions, feedback, or suggestions, feel free to reach out to me [on X/Twitter](https://twitter.com/digregoriodario).
 
