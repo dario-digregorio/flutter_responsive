@@ -462,7 +462,7 @@ Additionally, consider utilizing ConstrainedBox to introduce a degree of flexibi
 ### Builder vs MediaQuery
 Using `LayoutBuilder` and `OrientationBuilder` can sometimes get a bit hacky to use especially when using them in combination or for complex layouts. That is why I prefer to use `MediaQuery`. 
 
-⚠️**Warning** Thre are few things you should keep in mind when using MediaQuery:
+⚠️**Warning** There are few things you should keep in mind when using MediaQuery:
 - `MediaQuery` comes with different methods like `sizeOf` or `orientationOf` which you should use instead of `MediaQuery.of(context).size` or `MediaQuery.of(context).orientation`. The reason you only want automatic rebuilds whenever that specific property changes.
 - Using `MediaQuery` can have unwanted rebuilds. So make sure to only use it in a parent widget to define the whole Layout.
 
