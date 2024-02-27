@@ -56,6 +56,7 @@ If you have any questions, feedback, or suggestions, feel free to reach out to m
     - [Design a Prototype first](#design-a-prototype-first)
     - [Hardcoded Sizes and Values](#hardcoded-sizes-and-values)
     - [Builder vs MediaQuery](#builder-vs-mediaquery)
+      - [Why not just use `LayoutBuilder` and `OrientationBuilder`?](#why-not-just-use-layoutbuilder-and-orientationbuilder)
   - [Conclusion](#conclusion)
 
 ## Introduction
@@ -262,21 +263,25 @@ Wrap the `popUntil` method within a `SchedulerBinding.instance.addPostFrameCallb
 ### Center ListView with whitespace
 On larger screens, constraining the width of scrollable lists and centering them improves aesthetics and usability. Directly wrapping a `ListView` with a `ConstrainedBox` may restrict scrollable area to the constrained width, excluding the white space. A workaround involves using the `padding` parameter of `ListView` to dynamically calculate and apply horizontal padding based on screen size:
 ```dart
-final width = MediaQuery.sizeOf(context).width;
-double horizontalPadding = width > ScreenSize.large.size
-      ? ((width - ScreenSize.large.size) / 2)
-      : 16;
-return Scaffold(
-        body: ListView(
-            padding: EdgeInsets.symmetric(
-                horizontal: horizontalPadding, vertical: 16)
+return Scaffold(body:
+ LayoutBuilder(builder: (context, constraints) {
+      double horizontalPadding = constraints.maxWidth > ScreenSize.large.size
+          ? ((constraints.maxWidth - ScreenSize.large.size) / 2)
+          : Spacing.x3;
+      return ListView(
+          padding: EdgeInsets.symmetric(
+              horizontal: horizontalPadding, vertical: Spacing.x3),
 //...
-));
+)}));
 ```
 
 ![Responsive List View](docs/flutter_responsive_listview.gif)
 
 This approach uses again the `ScreenSize` enum to remain consistent.
+
+**Why do we use `LayoutBuilder` instead of `MediaQuery`?**
+Since we are showing the `NavigationRail` on larger screens, the `MediaQuery` would ignore the constrain from the `NavigationRail` and the `SafeArea`. So we use `LayoutBuilder` to get the actual constraints of the screen.
+Read more in this section: [Builder vs MediaQuery](#builder-vs-mediaquery)
 
 ## Widgets
 With our layout in place, it's time to explore the widgets that will enable us to construct a responsive UI. Flutter offers a rich set of widgets which are essential for creating responsive layouts and widgets. I strongly recommend reading documentation provided by the Flutter Team, which presents an extensive array of widgets in various formats. Here are some resources to get you started:
@@ -461,11 +466,14 @@ Avoid relying on hardcoded sizes and values within your app, as they frequently 
 Additionally, consider utilizing ConstrainedBox to introduce a degree of flexibility to your widgets. This approach allows you to set minimum and maximum constraints, providing your layout with the adaptability it needs to accommodate different screen sizes and orientations without compromising on design integrity.
 
 ### Builder vs MediaQuery
-Using `LayoutBuilder` and `OrientationBuilder` can sometimes get a bit hacky to use especially when using them in combination or for complex layouts. That is why I prefer to use `MediaQuery`. 
+⚠️**Warning** `MediaQuery` should be used with caution:
+- `MediaQuery` comes with different methods like `sizeOf` or `orientationOf` which you should use instead of `MediaQuery.of(context).size` or `MediaQuery.of(context).orientation`. The reason is you only want rebuilds whenever that specific property changes.
+- Using `MediaQuery` can have unwanted rebuilds. So make sure to only use it in the very top of your Widget Tree to define the whole Layout.
+- `MediaQuery` ignores paddings, SafeArea and other constraints because you get the size of the app window itself
+- For child widgets you should use `LayoutBuilder` or `OrientationBuilder` to get the actual constraints for the widget
 
-⚠️**Warning** There are few things you should keep in mind when using MediaQuery:
-- `MediaQuery` comes with different methods like `sizeOf` or `orientationOf` which you should use instead of `MediaQuery.of(context).size` or `MediaQuery.of(context).orientation`. The reason you only want automatic rebuilds whenever that specific property changes.
-- Using `MediaQuery` can have unwanted rebuilds. So make sure to only use it in a parent widget to define the whole Layout.
+#### Why not just use `LayoutBuilder` and `OrientationBuilder`?
+Using `LayoutBuilder` and `OrientationBuilder` can sometimes get a bit hacky to use especially when using them in combination for complex layouts. For that reason I prefer to use `MediaQuery`. But you could use `LayoutBuilder` and `OrientationBuilder` to get the same results.
 
 ## Conclusion
 Our app now dynamically responds to every screen size. The beauty of Flutter is that it provides all the tools necessary for responsive design across any device.
