@@ -5,21 +5,42 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "flutter_responsive",
+            "name": "app debug",
             "request": "launch",
             "type": "dart",
+            "cwd": "app/",
+            "program": "lib/main.dart"
         },
         {
-            "name": "flutter_responsive (profile mode)",
+            "name": "deck debug",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile",
+            "cwd": "deck/",
+            "program": "lib/main.dart"
         },
         {
-            "name": "flutter_responsive (release mode)",
+            "name": "deck (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release",
+            "cwd": "deck/",
+            "program": "lib/main.dart"
+        },
+        {
+            "name": "app (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "cwd": "app/",
+            "program": "lib/main.dart"
+        },
+        {
+            "name": "app (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "cwd": "app/",
+            "program": "lib/main.dart"
         }
     ]
 }
