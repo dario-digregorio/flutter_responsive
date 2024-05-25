@@ -6,6 +6,7 @@ import 'package:deck/slides/responsive_challanges_slide.dart';
 import 'package:deck/slides/thank_you_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:flutter_deck_web_client/flutter_deck_web_client.dart';
 
 void main() {
   runApp(const FlutterDeckExample());
@@ -18,9 +19,10 @@ class FlutterDeckExample extends StatelessWidget {
   Widget build(BuildContext context) {
     // This is an entry point for the Flutter Deck app.
     return FlutterDeckApp(
+      client: FlutterDeckWebClient(),
       configuration: const FlutterDeckConfiguration(
           controls:
-              FlutterDeckControlsConfiguration(presenterToolbarVisible: false),
+              FlutterDeckControlsConfiguration(presenterToolbarVisible: true),
           footer: FlutterDeckFooterConfiguration(
             showFooter: true,
             showSocialHandle: false,
