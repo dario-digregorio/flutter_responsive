@@ -18,6 +18,8 @@ dependencies:
     path: ../app/
   flutter_deck_web_client: ^0.1.1
   flutter_markdown: ^0.7.1
+  syntax_highlight: ^0.4.0
+  google_fonts: ^6.2.1
 
 
 

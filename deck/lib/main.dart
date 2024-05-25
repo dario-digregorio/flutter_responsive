@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:deck/slides/about_slide.dart';
 import 'package:deck/slides/devices_table_slide.dart';
+import 'package:deck/slides/foundation_slide.dart';
 import 'package:deck/slides/image_slide.dart';
 import 'package:deck/slides/intro_slide.dart';
 import 'package:deck/slides/platforms_slide.dart';
@@ -9,8 +12,28 @@ import 'package:deck/slides/thank_you_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_deck_web_client/flutter_deck_web_client.dart';
+import 'package:syntax_highlight/syntax_highlight.dart';
 
-void main() {
+late Highlighter highlighterDark;
+late Highlighter highlighterLight;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  FlutterError.onError = (details) {
+    log('FlutterError.onError: $details');
+  };
+
+  await Highlighter.initialize(['dart']);
+  // Load the default light theme and create a highlighter.
+  highlighterDark = Highlighter(
+    language: 'dart',
+    theme: await HighlighterTheme.loadDarkTheme(),
+  );
+  highlighterLight = Highlighter(
+    language: 'dart',
+    theme: await HighlighterTheme.loadLightTheme(),
+  );
   runApp(const FlutterDeckExample());
 }
 
@@ -19,8 +42,8 @@ class FlutterDeckExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // This is an entry point for the Flutter Deck app.
     return FlutterDeckApp(
+      themeMode: ThemeMode.system,
       client: FlutterDeckWebClient(),
       configuration: const FlutterDeckConfiguration(
           controls:
@@ -46,6 +69,7 @@ class FlutterDeckExample extends StatelessWidget {
         ImageSlide(),
         ResponsiveChallangesSlide(),
         DevicesTableSlide(),
+        FoundationSlide(),
         ReponsiveVsAdaptiveSlide(),
         ThankYouSlide(),
       ],
