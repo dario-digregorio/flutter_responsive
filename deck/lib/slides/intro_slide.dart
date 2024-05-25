@@ -12,8 +12,8 @@ class IntroSlide extends FlutterDeckSlideWidget {
   @override
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.bigFact(
-      title: 'Flutter Heroes 2024',
-      subtitle: 'Building Responsive UIs in Flutter',
+      headerBuilder: (context) => Container(),
+      title: 'Bulding Responsive UIs',
     );
   }
 }

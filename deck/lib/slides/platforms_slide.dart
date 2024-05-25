@@ -12,6 +12,7 @@ class PlatformsSlide extends FlutterDeckSlideWidget {
   @override
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.bigFact(
+      headerBuilder: (context) => Container(),
       title: 'Flutter has stable support for over 6 platforms',
     );
   }

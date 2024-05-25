@@ -16,9 +16,12 @@ class ImageSlide extends FlutterDeckSlideWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Let\'s built for all platforms!',
-                    style: Theme.of(context).textTheme.displayLarge),
-                const SizedBox(height: 20),
+                Text(
+                  '"I want to build an app that supports all platforms!"',
+                  style: Theme.of(context).textTheme.displayLarge,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 36),
                 Image.asset(
                   'assets/meme.png',
                   width: 600,

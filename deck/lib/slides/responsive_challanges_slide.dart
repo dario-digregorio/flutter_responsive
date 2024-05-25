@@ -5,23 +5,27 @@ class ResponsiveChallangesSlide extends FlutterDeckSlideWidget {
   const ResponsiveChallangesSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/responsive-challanges',
-          ),
+              route: '/responsive-challanges', steps: 6),
         );
 
   @override
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.blank(
-      builder: (context) => FlutterDeckBulletList(
-        useSteps: false,
-        items: const [
-          'Many different Form Factors (Phone, Tablet, Desktop, Foldable, ...)',
-          'Notches, Cutouts, Punch holes',
-          'Scaling UI and Text for accessibility',
-          'Different behaviors for different platforms',
-          'Supporting RTL and LTR languages',
-          'Screen Orientation',
-        ],
+      headerBuilder: (context) =>
+          const FlutterDeckHeader(title: 'Responsive Challanges'),
+      builder: (context) => Padding(
+        padding: const EdgeInsets.all(32),
+        child: FlutterDeckBulletList(
+          useSteps: true,
+          items: const [
+            'Many different Form Factors (Phone, Tablet, Desktop, Foldable, ...)',
+            'Notches, Cutouts, Punch holes',
+            'Scaling UI and Text for accessibility',
+            'Different behaviors for different platforms',
+            'Supporting RTL and LTR languages',
+            'Screen Orientation',
+          ],
+        ),
       ),
     );
   }

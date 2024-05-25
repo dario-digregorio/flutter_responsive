@@ -17,6 +17,7 @@ dependencies:
   flutter_responsive: 
     path: ../app/
   flutter_deck_web_client: ^0.1.1
+  flutter_markdown: ^0.7.1
 
 
 
