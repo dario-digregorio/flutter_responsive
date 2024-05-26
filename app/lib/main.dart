@@ -3,11 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_responsive/app.dart';
 
 void main() {
-  runApp(const App());
+  runApp(const App(
+      child: CounterApp())); // Needed to pass a different child from deck app
 }
 
 class App extends StatefulWidget {
-  const App({super.key});
+  final Widget child;
+  const App({super.key, required this.child});
 
   @override
   State<App> createState() => _AppState();
@@ -39,7 +41,7 @@ class _AppState extends State<App> {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      home: const CounterApp(),
+      home: widget.child,
     );
   }
 }

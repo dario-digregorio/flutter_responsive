@@ -17,7 +17,7 @@ class CodeSnippet extends StatelessWidget {
         child: Text.rich(
           highlightedCode,
           style: GoogleFonts.jetBrainsMono(
-            fontSize: 20,
+            fontSize: 16,
             height: 1.3,
           ),
         ),

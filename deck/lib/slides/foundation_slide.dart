@@ -1,10 +1,8 @@
-import 'package:deck/main.dart';
 import 'package:deck/widgets/code_snippet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-const snippet = '''
+const snippetScreenSize = '''
 enum ScreenSize {
   small(300),
   normal(400),
@@ -23,6 +21,14 @@ ScreenSize getScreenSize(BuildContext context) {
   if (deviceWidth > ScreenSize.normal.size) return ScreenSize.normal;
   return ScreenSize.small;
 }
+        ''';
+
+const snippetDeviceSegmentation = '''
+bool get isMobileDevice => !kIsWeb && (Platform.isIOS || Platform.isAndroid);
+bool get isDesktopDevice =>
+    !kIsWeb && (Platform.isMacOS || Platform.isWindows || Platform.isLinux);
+bool get isMobileDeviceOrWeb => kIsWeb || isMobileDevice;
+bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
         ''';
 
 class FoundationSlide extends FlutterDeckSlideWidget {
@@ -45,14 +51,38 @@ class FoundationSlide extends FlutterDeckSlideWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Mobile first',
-                style: Theme.of(context).textTheme.displayMedium),
+                style: Theme.of(context).textTheme.headlineLarge),
             const SizedBox(height: 16),
             Text(
               'Start with the smallest screen size and then scale up.',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const SizedBox(height: 64),
-            const CodeSnippet(text: snippet),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Define Screen-based Breakpoints',
+                        style: Theme.of(context).textTheme.headlineLarge),
+                    const SizedBox(height: 16),
+                    const CodeSnippet(text: snippetScreenSize),
+                  ],
+                ),
+                const SizedBox(width: 32),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Device Segmentation',
+                        style: Theme.of(context).textTheme.headlineLarge),
+                    const SizedBox(height: 16),
+                    const CodeSnippet(text: snippetDeviceSegmentation),
+                  ],
+                )
+              ],
+            ),
           ],
         ),
       ),
