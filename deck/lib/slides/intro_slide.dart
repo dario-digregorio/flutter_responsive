@@ -12,6 +12,9 @@ class IntroSlide extends FlutterDeckSlideWidget {
   @override
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.bigFact(
+      footerBuilder: (context) => const FlutterDeckFooter(
+        widget: Text('Build with flutter_deck'),
+      ),
       headerBuilder: (context) => Container(),
       title: 'Bulding Responsive UIs',
     );

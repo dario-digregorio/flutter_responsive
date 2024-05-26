@@ -1,15 +1,13 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_box_transform/flutter_box_transform.dart';
 import 'package:flutter_responsive/core/constants.dart';
 import 'package:flutter_responsive/main.dart';
 
 class DemoApp extends StatefulWidget {
   final Widget child;
-  const DemoApp({super.key, required this.child});
+  final bool showData;
+  const DemoApp({super.key, required this.child, this.showData = true});
 
   @override
   State<DemoApp> createState() => _DemoAppState();
@@ -17,7 +15,7 @@ class DemoApp extends StatefulWidget {
 
 class _DemoAppState extends State<DemoApp> {
   late Rect rect = Rect.fromCenter(
-    center: MediaQuery.of(context).size.center(const Offset(0, -150)),
+    center: MediaQuery.of(context).size.center(const Offset(0, -100)),
     width: 800,
     height: 600,
   );
@@ -29,11 +27,13 @@ class _DemoAppState extends State<DemoApp> {
     return Stack(
       fit: StackFit.expand,
       children: [
-        if (mediaQuery != null && screenSize != null)
+        if (mediaQuery != null && screenSize != null && widget.showData)
           Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const Text(
+                    'Move and resize the counter window to see the layout changes'),
                 ListTile(
                     leading: const Icon(Icons.height_rounded),
                     title: const Text('Height'),
@@ -51,7 +51,7 @@ class _DemoAppState extends State<DemoApp> {
                     leading: const Icon(Icons.rotate_90_degrees_cw_rounded),
                     title: const Text('Orientation'),
                     subtitle: Text(mediaQuery!.orientation.name)),
-              ].toList()),
+              ]),
         TransformableBox(
           rect: rect,
           allowContentFlipping: false,
@@ -67,6 +67,8 @@ class _DemoAppState extends State<DemoApp> {
             return LayoutBuilder(builder: (context, constraints) {
               return MediaQuery(
                 data: MediaQuery.of(context).copyWith(
+                    platformBrightness:
+                        MediaQuery.platformBrightnessOf(context),
                     size: Size(constraints.maxWidth, constraints.maxHeight)),
                 child: Builder(builder: (context) {
                   SchedulerBinding.instance.addPostFrameCallback((_) {

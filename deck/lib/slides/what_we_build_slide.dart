@@ -4,14 +4,14 @@ import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_responsive/app.dart';
 import 'package:flutter_responsive/core/constants.dart';
 import 'package:flutter_responsive/core/navigation.dart';
-import 'package:flutter_responsive/pages/counter_detail_page.dart';
+import 'package:flutter_responsive/notifier/counters_notifier.dart';
 import 'package:flutter_responsive/pages/counters_page.dart';
 
-class Layout1DemoSlide extends FlutterDeckSlideWidget {
-  const Layout1DemoSlide()
+class WhatWeBuildSlide extends FlutterDeckSlideWidget {
+  const WhatWeBuildSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/layout1-demo',
+            route: '/what-we-build',
           ),
         );
 
@@ -19,10 +19,11 @@ class Layout1DemoSlide extends FlutterDeckSlideWidget {
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.blank(
         headerBuilder: (context) => const FlutterDeckHeader(
-              title: 'Defining a Responsive Layout',
+              title: 'What we will build',
             ),
         builder: (context) => const DemoApp(
-              child: CounterDemoLayout(),
+              showData: false,
+              child: CounterApp(),
             ));
   }
 }
@@ -32,7 +33,6 @@ class CounterDemoLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = ScreenUtils.getScreenSize(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor:
@@ -44,8 +44,12 @@ class CounterDemoLayout extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (context) {
-                    return const Dialog.fullscreen(
-                      child: AddCounterDialog(),
+                    return ConstrainedBox(
+                      constraints:
+                          BoxConstraints(maxWidth: ScreenSize.small.size),
+                      child: const Dialog(
+                        child: AddCounterDialog(),
+                      ),
                     );
                   });
             },
@@ -54,21 +58,8 @@ class CounterDemoLayout extends StatelessWidget {
           )
         ],
       ),
-      bottomNavigationBar: switch (screenSize) {
-        ScreenSize.normal || ScreenSize.small => const CounterNavigationBar(),
-        _ => null,
-      },
-      body: switch (screenSize) {
-        ScreenSize.large || ScreenSize.extraLarge => const Row(
-            children: [
-              CounterNavigationRail(),
-              VerticalDivider(thickness: 1, width: 1),
-              Expanded(child: CountersPage(isPage: false)),
-              Expanded(child: CounterDetailPage(isPage: false)),
-            ],
-          ),
-        _ => const CountersPage(isPage: true),
-      },
+      bottomNavigationBar: const CounterNavigationBar(),
+      body: const CountersPage(isPage: true),
     );
   }
 }

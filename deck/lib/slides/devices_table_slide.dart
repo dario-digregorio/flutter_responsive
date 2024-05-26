@@ -23,6 +23,9 @@ class DevicesTableSlide extends FlutterDeckSlideWidget {
           padding: const EdgeInsets.all(32),
           selectable: true,
           data: '''
+# What device should you use for testing your app with different screen sizes?
+
+
 | Environment               | HotReload |        Resizable Window         | Text Scaling | UI Scaling |
 | ------------------------- | :-------: | :-----------------------------: | :----------: | :--------: |
 | Windows/Mac/Linux         |    Yes    |               Yes               |     Yes      |    Yes     |

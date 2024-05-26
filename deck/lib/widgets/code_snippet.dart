@@ -11,14 +11,16 @@ class CodeSnippet extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final highlighter = isDark ? highlighterDark : highlighterLight;
     var highlightedCode = highlighter.highlight(text);
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(32),
-        child: Text.rich(
-          highlightedCode,
-          style: GoogleFonts.jetBrainsMono(
-            fontSize: 16,
-            height: 1.3,
+    return SelectionArea(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(32),
+          child: Text.rich(
+            highlightedCode,
+            style: GoogleFonts.jetBrainsMono(
+              fontSize: 16,
+              height: 1.3,
+            ),
           ),
         ),
       ),

@@ -10,7 +10,9 @@ import 'package:deck/slides/layout1_slide.dart';
 import 'package:deck/slides/platforms_slide.dart';
 import 'package:deck/slides/responsive_challanges_slide.dart';
 import 'package:deck/slides/responsive_vs_adaptive_slide.dart';
+import 'package:deck/slides/start.dart';
 import 'package:deck/slides/thank_you_slide.dart';
+import 'package:deck/slides/what_we_build_slide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_deck_web_client/flutter_deck_web_client.dart';
@@ -69,8 +71,10 @@ class FlutterDeckExample extends StatelessWidget {
         AboutSlide(),
         PlatformsSlide(),
         ImageSlide(),
-        ResponsiveChallangesSlide(),
+        ResponsiveChallengesSlide(),
+        WhatWeBuildSlide(),
         DevicesTableSlide(),
+        StartSlide(),
         FoundationSlide(),
         Layout1Slide(),
         Layout1DemoSlide(),

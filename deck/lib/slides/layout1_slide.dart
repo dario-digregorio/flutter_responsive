@@ -1,9 +1,6 @@
 import 'package:deck/widgets/code_snippet.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
-import 'package:flutter_responsive/app.dart';
-import 'package:flutter_responsive/main.dart';
 
 const snippet = '''
 class _CounterAppState extends State<CounterApp> {
@@ -51,15 +48,12 @@ class Layout1Slide extends FlutterDeckSlideWidget {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Layout 1',
-                        style: Theme.of(context).textTheme.displaySmall),
-                    const SizedBox(height: 16),
                     Text(
                       'Define a responsive layout based on the screen size.',
                       style: Theme.of(context).textTheme.headlineMedium,
                     ),
-                    const SizedBox(height: 64),
-                    const CodeSnippet(text: snippet),
+                    const SizedBox(height: 32),
+                    const Center(child: CodeSnippet(text: snippet)),
                   ]),
             ));
   }

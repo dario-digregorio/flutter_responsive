@@ -54,35 +54,14 @@ class FoundationSlide extends FlutterDeckSlideWidget {
                 style: Theme.of(context).textTheme.headlineLarge),
             const SizedBox(height: 16),
             Text(
-              'Start with the smallest screen size and then scale up.',
+              'Starting your design with mobile in mind makes scaling up to larger screens smoother. This approach helps in efficiently adapting your designs for tablets or desktops. We will implement a Master-Detail layout for larger screens.',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
-            const SizedBox(height: 64),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Define Screen-based Breakpoints',
-                        style: Theme.of(context).textTheme.headlineLarge),
-                    const SizedBox(height: 16),
-                    const CodeSnippet(text: snippetScreenSize),
-                  ],
-                ),
-                const SizedBox(width: 32),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Device Segmentation',
-                        style: Theme.of(context).textTheme.headlineLarge),
-                    const SizedBox(height: 16),
-                    const CodeSnippet(text: snippetDeviceSegmentation),
-                  ],
-                )
-              ],
-            ),
+            const SizedBox(height: 32),
+            Text('Define Screen-based Breakpoints',
+                style: Theme.of(context).textTheme.headlineLarge),
+            const SizedBox(height: 32),
+            const Center(child: CodeSnippet(text: snippetScreenSize)),
           ],
         ),
       ),

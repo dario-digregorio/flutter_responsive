@@ -1,18 +1,18 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-class ResponsiveChallangesSlide extends FlutterDeckSlideWidget {
-  const ResponsiveChallangesSlide()
+class ResponsiveChallengesSlide extends FlutterDeckSlideWidget {
+  const ResponsiveChallengesSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-              route: '/responsive-challanges', steps: 6),
+              route: '/responsive-challenges', steps: 6),
         );
 
   @override
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.blank(
       headerBuilder: (context) =>
-          const FlutterDeckHeader(title: 'Responsive Challanges'),
+          const FlutterDeckHeader(title: 'Responsive Challenges'),
       builder: (context) => Padding(
         padding: const EdgeInsets.all(32),
         child: FlutterDeckBulletList(

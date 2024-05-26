@@ -41,6 +41,11 @@ class _AppState extends State<App> {
         useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
+      ),
       home: widget.child,
     );
   }
