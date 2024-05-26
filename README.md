@@ -410,8 +410,8 @@ By integrating these tools and features into your development workflow, you can 
 ## Testing
 Ensuring your app delivers a consistent user experience across different screen sizes is essential. You can achieve this by conducting tests for various screen dimensions. Here’s how you can do it:
 ``` dart
-  group('Test Responsive', () {
-testWidgets('should have only CountersPage', (WidgetTester tester) async {
+group('Test Responsive', () {
+  testWidgets('should have only CountersPage', (WidgetTester tester) async {
       tester.view.devicePixelRatio = 1.0; // Not necessary but makes it easier to use the same values from our ScreenSizes
       tester.view.physicalSize =
           const Size(500, 800); // to test layout on smaller devices

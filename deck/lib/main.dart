@@ -1,6 +1,10 @@
 import 'dart:developer';
 
 import 'package:deck/slides/about_slide.dart';
+import 'package:deck/slides/abstract_slide.dart';
+import 'package:deck/slides/approach_slide.dart';
+import 'package:deck/slides/best_practises_slide.dart';
+import 'package:deck/slides/branch_slide.dart';
 import 'package:deck/slides/devices_table_slide.dart';
 import 'package:deck/slides/foundation_slide.dart';
 import 'package:deck/slides/image_slide.dart';
@@ -11,10 +15,12 @@ import 'package:deck/slides/layout2_demo_slide.dart';
 import 'package:deck/slides/layout2_slide.dart';
 import 'package:deck/slides/layout3_demo_slide.dart';
 import 'package:deck/slides/layout3_slide.dart';
+import 'package:deck/slides/measure_slide.dart';
 import 'package:deck/slides/platforms_slide.dart';
 import 'package:deck/slides/responsive_challanges_slide.dart';
 import 'package:deck/slides/responsive_vs_adaptive_slide.dart';
 import 'package:deck/slides/start.dart';
+import 'package:deck/slides/testing_slide.dart';
 import 'package:deck/slides/thank_you_slide.dart';
 import 'package:deck/slides/what_we_build_slide.dart';
 import 'package:flutter/material.dart';
@@ -86,7 +92,13 @@ class FlutterDeckExample extends StatelessWidget {
         Layout2DemoSlide(),
         Layout3Slide(),
         Layout3DemoSlide(),
+        ApproachSlide(),
+        AbstractSlide(),
+        MeasureSlide(),
+        BranchSlide(),
         ReponsiveVsAdaptiveSlide(),
+        TestingSlide(),
+        BestPractisesSlide(),
         ThankYouSlide(),
       ],
     );

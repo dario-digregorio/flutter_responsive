@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 class PlatformsSlide extends FlutterDeckSlideWidget {
@@ -19,7 +18,7 @@ class PlatformsSlide extends FlutterDeckSlideWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    ' Flutter has stable support for over 6 platforms',
+                    'Flutter has stable support for over 6 platforms',
                     style: Theme.of(context).textTheme.displayMedium,
                   ),
                   const SizedBox(height: 32),
