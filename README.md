@@ -260,6 +260,8 @@ if (screenSize == ScreenSize.large || screenSize == ScreenSize.extraLarge) {
 
 Wrap the `popUntil` method within a `SchedulerBinding.instance.addPostFrameCallback` to delay its execution until after the current build cycle to avoiding build method conflicts.
 
+Furthermore when the user navigates to the Settings Page the NavigationRail or the NavigationBar could loose the selected index. To prevent this we save the selected index in a `ChangeNotifier`. 
+
 ### Center ListView with whitespace
 On larger screens, constraining the width of scrollable lists and centering them improves aesthetics and usability. Directly wrapping a `ListView` with a `ConstrainedBox` may restrict scrollable area to the constrained width, excluding the white space. A workaround involves using the `padding` parameter of `ListView` to dynamically calculate and apply horizontal padding based on screen size:
 ```dart

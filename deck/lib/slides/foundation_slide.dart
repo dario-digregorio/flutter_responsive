@@ -52,6 +52,16 @@ class FoundationSlide extends FlutterDeckSlideWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(32),
+                  child: Text(
+                    '⚠️ We will not use additional packages. It is recommended to use some form of state management solution like Riverpod or Bloc to manage your app\'s state effectively.',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 64),
               Text('Mobile first',
                   style: Theme.of(context).textTheme.headlineLarge),
               const SizedBox(height: 16),

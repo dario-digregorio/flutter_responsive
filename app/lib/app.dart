@@ -70,7 +70,7 @@ class _CounterAppState extends State<CounterApp> {
               CounterNavigationRail(),
               VerticalDivider(thickness: 1, width: 1),
               Expanded(
-                child: NavigationCounter(
+                child: NavigationLayout(
                   child: Row(
                     children: [
                       Expanded(
@@ -90,12 +90,12 @@ class _CounterAppState extends State<CounterApp> {
               CounterNavigationRail(),
               VerticalDivider(thickness: 1, width: 1),
               Expanded(
-                  child: NavigationCounter(
+                  child: NavigationLayout(
                 child: CountersPage(isPage: true),
               ))
             ],
           ),
-        _ => const NavigationCounter(child: CountersPage(isPage: true)),
+        _ => const NavigationLayout(child: CountersPage(isPage: true)),
       },
     );
   }
@@ -155,9 +155,9 @@ class AddCounterDialog extends StatelessWidget {
   }
 }
 
-class NavigationCounter extends StatelessWidget {
+class NavigationLayout extends StatelessWidget {
   final Widget child;
-  const NavigationCounter({super.key, required this.child});
+  const NavigationLayout({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {

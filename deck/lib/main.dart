@@ -9,6 +9,8 @@ import 'package:deck/slides/layout1_demo_slide.dart';
 import 'package:deck/slides/layout1_slide.dart';
 import 'package:deck/slides/layout2_demo_slide.dart';
 import 'package:deck/slides/layout2_slide.dart';
+import 'package:deck/slides/layout3_demo_slide.dart';
+import 'package:deck/slides/layout3_slide.dart';
 import 'package:deck/slides/platforms_slide.dart';
 import 'package:deck/slides/responsive_challanges_slide.dart';
 import 'package:deck/slides/responsive_vs_adaptive_slide.dart';
@@ -82,6 +84,8 @@ class FlutterDeckExample extends StatelessWidget {
         Layout1DemoSlide(),
         Layout2Slide(),
         Layout2DemoSlide(),
+        Layout3Slide(),
+        Layout3DemoSlide(),
         ReponsiveVsAdaptiveSlide(),
         ThankYouSlide(),
       ],

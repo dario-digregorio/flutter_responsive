@@ -22,17 +22,15 @@ class _CounterAppState extends State<CounterApp> {
                 CounterNavigationRail(),
                 VerticalDivider(thickness: 1, width: 1),
                 Expanded(
-                  child: NavigationCounter(
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: CountersPage(isPage: false),
-                        ),
-                        Expanded(
-                          child: CounterDetailPage(isPage: false),
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: CountersPage(isPage: false),
+                      ),
+                      Expanded(
+                        child: CounterDetailPage(isPage: false),
+                      ),
+                    ],
                   ),
                 ),
               ],

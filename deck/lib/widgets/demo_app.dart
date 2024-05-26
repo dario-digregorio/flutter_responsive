@@ -32,8 +32,8 @@ class _DemoAppState extends State<DemoApp> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                    'Move and resize the counter window to see the layout changes'),
+                // const Text(
+                //     'Move and resize the counter window to see the layout changes'),
                 ListTile(
                     leading: const Icon(Icons.height_rounded),
                     title: const Text('Height'),
