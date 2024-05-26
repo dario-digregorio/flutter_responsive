@@ -19,7 +19,7 @@ class Layout1DemoSlide extends FlutterDeckSlideWidget {
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.blank(
         headerBuilder: (context) => const FlutterDeckHeader(
-              title: 'Defining a Responsive Layout',
+              title: 'Defining the Responsive Layout',
             ),
         builder: (context) => const DemoApp(
               child: CounterDemoLayout(),

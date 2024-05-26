@@ -15,6 +15,7 @@ enum ScreenSize {
 }
 
 ScreenSize getScreenSize(BuildContext context) {
+  // you can choose on which side you want to calculate the size
   double deviceWidth = MediaQuery.sizeOf(context).shortestSide;
   if (deviceWidth > ScreenSize.extraLarge.size) return ScreenSize.extraLarge;
   if (deviceWidth > ScreenSize.large.size) return ScreenSize.large;
@@ -47,22 +48,29 @@ class FoundationSlide extends FlutterDeckSlideWidget {
       ),
       builder: (context) => Padding(
         padding: const EdgeInsets.all(32),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Mobile first',
-                style: Theme.of(context).textTheme.headlineLarge),
-            const SizedBox(height: 16),
-            Text(
-              'Starting your design with mobile in mind makes scaling up to larger screens smoother. This approach helps in efficiently adapting your designs for tablets or desktops. We will implement a Master-Detail layout for larger screens.',
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            const SizedBox(height: 32),
-            Text('Define Screen-based Breakpoints',
-                style: Theme.of(context).textTheme.headlineLarge),
-            const SizedBox(height: 32),
-            const Center(child: CodeSnippet(text: snippetScreenSize)),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Mobile first',
+                  style: Theme.of(context).textTheme.headlineLarge),
+              const SizedBox(height: 16),
+              Text(
+                'Starting your design with mobile in mind makes scaling up to larger screens smoother. This approach helps in efficiently adapting your designs for tablets or desktops. We will implement a Master-Detail layout for larger screens.',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const SizedBox(height: 64),
+              Text('Define Screen-based Breakpoints',
+                  style: Theme.of(context).textTheme.headlineLarge),
+              const SizedBox(height: 32),
+              const Center(child: CodeSnippet(text: snippetScreenSize)),
+              const SizedBox(height: 64),
+              Text('Device Segmentation',
+                  style: Theme.of(context).textTheme.headlineLarge),
+              const SizedBox(height: 32),
+              const Center(child: CodeSnippet(text: snippetDeviceSegmentation)),
+            ],
+          ),
         ),
       ),
     );
