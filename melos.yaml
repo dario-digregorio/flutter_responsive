@@ -1,0 +1,25 @@
+name: flutter_responsive
+
+packages:
+  - '*'
+  - app/**
+  - deck/**
+
+scripts:
+  analyze:
+    exec: dart analyze .
+  format:
+    exec: dart format .
+  test:
+    exec: dart test
+  get:
+    exec: flutter pub get
+  build:
+    exec: flutter build web
+  build_runner:
+    exec: dart run build_runner build --delete-conflicting-outputs
+  build_runner_watch:
+    exec: dart run build_runner watch --delete-conflicting-outputs
+  build_runner_clean:
+    exec: dart run build_runner clean
+  

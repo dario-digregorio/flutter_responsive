@@ -260,6 +260,8 @@ if (screenSize == ScreenSize.large || screenSize == ScreenSize.extraLarge) {
 
 Wrap the `popUntil` method within a `SchedulerBinding.instance.addPostFrameCallback` to delay its execution until after the current build cycle to avoiding build method conflicts.
 
+Furthermore when the user navigates to the Settings Page the NavigationRail or the NavigationBar could loose the selected index. To prevent this we save the selected index in a `ChangeNotifier`. 
+
 ### Center ListView with whitespace
 On larger screens, constraining the width of scrollable lists and centering them improves aesthetics and usability. Directly wrapping a `ListView` with a `ConstrainedBox` may restrict scrollable area to the constrained width, excluding the white space. A workaround involves using the `padding` parameter of `ListView` to dynamically calculate and apply horizontal padding based on screen size:
 ```dart
@@ -408,8 +410,8 @@ By integrating these tools and features into your development workflow, you can 
 ## Testing
 Ensuring your app delivers a consistent user experience across different screen sizes is essential. You can achieve this by conducting tests for various screen dimensions. Here’s how you can do it:
 ``` dart
-  group('Test Responsive', () {
-testWidgets('should have only CountersPage', (WidgetTester tester) async {
+group('Test Responsive', () {
+  testWidgets('should have only CountersPage', (WidgetTester tester) async {
       tester.view.devicePixelRatio = 1.0; // Not necessary but makes it easier to use the same values from our ScreenSizes
       tester.view.physicalSize =
           const Size(500, 800); // to test layout on smaller devices

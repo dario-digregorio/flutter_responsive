@@ -1,0 +1,36 @@
+name: deck
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  flutter_deck: ^0.14.0
+  flutter_responsive: 
+    path: ../app/
+  flutter_deck_web_client: ^0.1.1
+  flutter_markdown: ^0.7.1
+  syntax_highlight: ^0.4.0
+  google_fonts: ^6.2.1
+  flutter_box_transform: ^0.4.2
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
