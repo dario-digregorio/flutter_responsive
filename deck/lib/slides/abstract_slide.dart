@@ -27,9 +27,9 @@ class AbstractSlide extends FlutterDeckSlideWidget {
                   const SizedBox(height: 32),
                   Text(
                     '''
-        - Dialogs, both fullscreen and modal
-        - Navigation UI, both rail and bottom bar
-        - Custom layout, such as "is the UI area taller or wider?"
+    - Dialogs, both fullscreen and modal
+    - Navigation UI, both rail and bottom bar
+    - Custom layout, such as "is the UI area taller or wider?"
         ''',
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),

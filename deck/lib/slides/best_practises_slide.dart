@@ -24,7 +24,7 @@ class BestPractisesSlide extends FlutterDeckSlideWidget {
           items: const [
             'Break down your widgets',
             'Design to the strengths of each form factor',
-            'Solve touch first',
+            'Solve touch first (Mobile first)',
             'Don\'t lock the orientation of your app',
             'Don\'t gobble up all of the horizontal space',
             'Restore state',

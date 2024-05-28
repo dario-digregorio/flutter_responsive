@@ -37,7 +37,7 @@ class AboutSlide extends FlutterDeckSlideWidget {
                     Text(
                         'Senior Software Engineer Flutter & Web @NTT Data Germany',
                         style: Theme.of(context).textTheme.headlineLarge),
-                    Text('Indie Developer',
+                    Text('Indie Developer and Freelancer',
                         style: Theme.of(context).textTheme.headlineLarge),
                   ],
                 ),

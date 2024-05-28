@@ -16,22 +16,24 @@ class ApproachSlide extends FlutterDeckSlideWidget {
         headerBuilder: (context) => const FlutterDeckHeader(
               title: 'General Approach',
             ),
-        builder: (context) => Padding(
-              padding: const EdgeInsets.all(64),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                      'The general approach on creating responsive widgets is explained in detailed by the Flutter Team:',
-                      style: Theme.of(context).textTheme.headlineMedium),
-                  const SizedBox(height: 32),
-                  Image.asset('assets/approach.png'),
-                  const SizedBox(height: 16),
-                  const Text(
-                      'Read more: https://docs.flutter.dev/ui/adaptive-responsive'),
-                  const Text(
-                      'Watch on YouTube: https://www.youtube.com/watch?v=LeKLGzpsz9I'),
-                ],
+        builder: (context) => SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(64),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                        'The general approach on creating responsive widgets is explained in detailed by the Flutter Team:',
+                        style: Theme.of(context).textTheme.headlineMedium),
+                    const SizedBox(height: 32),
+                    Image.asset('assets/approach.png'),
+                    const SizedBox(height: 16),
+                    const Text(
+                        'Read more: https://docs.flutter.dev/ui/adaptive-responsive'),
+                    const Text(
+                        'Watch on YouTube: https://www.youtube.com/watch?v=LeKLGzpsz9I'),
+                  ],
+                ),
               ),
             ));
   }
