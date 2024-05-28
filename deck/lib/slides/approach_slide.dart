@@ -24,7 +24,7 @@ class ApproachSlide extends FlutterDeckSlideWidget {
                       'The general approach on creating responsive widgets is explained in detailed by the Flutter Team:',
                       style: Theme.of(context).textTheme.headlineMedium),
                   const SizedBox(height: 32),
-                  const Image(image: AssetImage('approach.png')),
+                  Image.asset('assets/approach.png'),
                   const SizedBox(height: 16),
                   const Text(
                       'Read more: https://docs.flutter.dev/ui/adaptive-responsive'),

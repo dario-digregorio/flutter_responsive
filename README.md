@@ -2,6 +2,8 @@
 
 This repository aims to provide a solid foundation for developers looking to create responsive applications with Flutter. Dive into the concepts, explore the widgets, and experiment with the code to build apps that look great on any device.
 
+You can also see a simple interactive version of as a Presentation [here](https://dario-digregorio.github.io/flutter_responsive).
+
 **Side Note**: This guide avoids using additional packages. However, I recommend using at least a state management solution like Riverpod or Bloc to manage your app's state effectively. To keep this guide simple we will use the build in API `ChangeNotifier` to update the UI.
 
 ![Responsive](docs/flutter_responsive.gif)

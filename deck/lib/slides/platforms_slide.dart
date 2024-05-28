@@ -23,7 +23,7 @@ class PlatformsSlide extends FlutterDeckSlideWidget {
                   ),
                   const SizedBox(height: 32),
                   Image.asset(
-                    'platforms.png',
+                    'assets/platforms.png',
                     height: 400,
                     fit: BoxFit.contain,
                   ),
