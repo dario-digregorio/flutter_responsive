@@ -5,6 +5,7 @@ class IntroSlide extends FlutterDeckSlideWidget {
   const IntroSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Bulding Responsive UIs',
             route: '/intro',
           ),
         );

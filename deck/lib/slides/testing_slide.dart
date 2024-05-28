@@ -34,6 +34,7 @@ class TestingSlide extends FlutterDeckSlideWidget {
   const TestingSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Testing Responsive Designs',
             route: '/testing',
           ),
         );

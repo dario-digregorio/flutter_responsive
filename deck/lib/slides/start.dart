@@ -10,6 +10,7 @@ class StartSlide extends FlutterDeckSlideWidget {
   const StartSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Starting Point',
             route: '/start',
           ),
         );

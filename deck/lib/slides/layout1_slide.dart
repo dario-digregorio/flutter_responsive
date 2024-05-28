@@ -35,6 +35,7 @@ class Layout1Slide extends FlutterDeckSlideWidget {
   const Layout1Slide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Defining the Responsive Layout',
             route: '/layout1',
           ),
         );

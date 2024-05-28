@@ -121,6 +121,7 @@ class Layout3Slide extends FlutterDeckSlideWidget {
   const Layout3Slide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Navigation, Dialogs and Single Page Layouts',
             route: '/layout3',
           ),
         );

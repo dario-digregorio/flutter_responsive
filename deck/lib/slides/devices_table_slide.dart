@@ -7,6 +7,7 @@ class DevicesTableSlide extends FlutterDeckSlideWidget {
   const DevicesTableSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Devices Table',
             route: '/devices-table',
           ),
         );

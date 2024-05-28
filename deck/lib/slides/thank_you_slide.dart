@@ -5,6 +5,7 @@ class ThankYouSlide extends FlutterDeckSlideWidget {
   const ThankYouSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Thank You',
             route: '/thank-you',
           ),
         );

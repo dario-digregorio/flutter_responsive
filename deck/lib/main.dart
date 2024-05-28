@@ -62,7 +62,7 @@ class FlutterDeckExample extends StatelessWidget {
       configuration: const FlutterDeckConfiguration(
           slideSize: FlutterDeckSlideSize.responsive(),
           controls: FlutterDeckControlsConfiguration(
-            presenterToolbarVisible: false,
+            presenterToolbarVisible: true,
           ),
           header: FlutterDeckHeaderConfiguration(
             showHeader: true,

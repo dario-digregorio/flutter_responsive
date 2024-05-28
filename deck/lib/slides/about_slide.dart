@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 class AboutSlide extends FlutterDeckSlideWidget {
   const AboutSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'About',
             route: '/about',
           ),
         );
@@ -34,7 +34,8 @@ class AboutSlide extends FlutterDeckSlideWidget {
                     Text('Dario Digregorio',
                         style: Theme.of(context).textTheme.displayMedium),
                     const SizedBox(height: 8),
-                    Text('Senior Flutter & Web Developer @NTT Data Germany',
+                    Text(
+                        'Senior Software Engineer Flutter & Web @NTT Data Germany',
                         style: Theme.of(context).textTheme.headlineLarge),
                     Text('Indie Developer',
                         style: Theme.of(context).textTheme.headlineLarge),
@@ -43,11 +44,11 @@ class AboutSlide extends FlutterDeckSlideWidget {
               ],
             ),
             const SizedBox(height: 64),
-            Text('• From Germany with Italian roots',
+            Text('• From Germany with italian roots',
                 style: Theme.of(context).textTheme.headlineMedium),
-            Text('• Love creating intuitiv, adaptable and responsive Apps',
+            Text('• Love creating intuitiv, adaptable and responsive apps',
                 style: Theme.of(context).textTheme.headlineMedium),
-            Text('• Released my first App "Yawa" in 2023 🎉',
+            Text('• Released my first indie app "Yawa" in 2023 🎉',
                 style: Theme.of(context).textTheme.headlineMedium)
           ],
         ),

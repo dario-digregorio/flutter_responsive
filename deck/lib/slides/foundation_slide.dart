@@ -36,6 +36,7 @@ class FoundationSlide extends FlutterDeckSlideWidget {
   const FoundationSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Foundation',
             route: '/foundation',
           ),
         );

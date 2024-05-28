@@ -11,6 +11,7 @@ class Layout2DemoSlide extends FlutterDeckSlideWidget {
   const Layout2DemoSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Adapting to Orientation Changes Demo',
             route: '/layout2-demo',
           ),
         );

@@ -5,6 +5,7 @@ class ApproachSlide extends FlutterDeckSlideWidget {
   const ApproachSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'General Approach',
             route: '/approach',
           ),
         );

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 class BranchSlide extends FlutterDeckSlideWidget {
   const BranchSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Branch',
             route: '/branch',
           ),
         );

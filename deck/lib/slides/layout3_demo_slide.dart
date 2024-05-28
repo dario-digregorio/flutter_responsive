@@ -12,6 +12,7 @@ class Layout3DemoSlide extends FlutterDeckSlideWidget {
   const Layout3DemoSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Navigation, Dialogs and Single Page Layouts',
             route: '/layout3-demo',
           ),
         );
@@ -20,7 +21,7 @@ class Layout3DemoSlide extends FlutterDeckSlideWidget {
   FlutterDeckSlide build(BuildContext context) {
     return FlutterDeckSlide.blank(
         headerBuilder: (context) => const FlutterDeckHeader(
-              title: 'Navigation, Dialogs and Single Page Layouts',
+              title: 'Navigation, Dialogs and Single Page Layouts Demo',
             ),
         builder: (context) => const DemoApp(
               child: CounterApp(),

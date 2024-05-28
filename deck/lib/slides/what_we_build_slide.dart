@@ -4,13 +4,13 @@ import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_responsive/app.dart';
 import 'package:flutter_responsive/core/constants.dart';
 import 'package:flutter_responsive/core/navigation.dart';
-import 'package:flutter_responsive/notifier/counters_notifier.dart';
 import 'package:flutter_responsive/pages/counters_page.dart';
 
 class WhatWeBuildSlide extends FlutterDeckSlideWidget {
   const WhatWeBuildSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'What we will build',
             route: '/what-we-build',
           ),
         );

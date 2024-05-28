@@ -5,6 +5,7 @@ class BestPractisesSlide extends FlutterDeckSlideWidget {
   const BestPractisesSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Best Practises',
             route: '/best-practises',
             steps: 6,
           ),

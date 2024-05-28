@@ -6,6 +6,7 @@ class MeasureSlide extends FlutterDeckSlideWidget {
   const MeasureSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Measure',
             route: '/measure',
           ),
         );

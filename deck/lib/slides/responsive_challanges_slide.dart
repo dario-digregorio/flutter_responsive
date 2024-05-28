@@ -5,7 +5,9 @@ class ResponsiveChallengesSlide extends FlutterDeckSlideWidget {
   const ResponsiveChallengesSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
-              route: '/responsive-challenges', steps: 6),
+              title: 'Responsive Challenges',
+              route: '/responsive-challenges',
+              steps: 6),
         );
 
   @override
@@ -18,12 +20,12 @@ class ResponsiveChallengesSlide extends FlutterDeckSlideWidget {
         child: FlutterDeckBulletList(
           useSteps: true,
           items: const [
-            'Many different Form Factors (Phone, Tablet, Desktop, Foldable, ...)',
-            'Notches, Cutouts, Punch holes, Dynamic Island',
-            'Scaling UI and Text for accessibility',
+            'Many different form factors (Phone, Tablet, Desktop, Foldable, ...)',
+            'Notches, cutouts, punch holes, Dynamic Island',
+            'Scaling UI and text for accessibility',
             'Different behaviors for different platforms',
             'Supporting RTL and LTR languages',
-            'Screen Orientation',
+            'Screen orientation',
           ],
         ),
       ),

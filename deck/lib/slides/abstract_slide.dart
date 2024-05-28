@@ -5,6 +5,7 @@ class AbstractSlide extends FlutterDeckSlideWidget {
   const AbstractSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Abstract',
             route: '/abstract',
           ),
         );

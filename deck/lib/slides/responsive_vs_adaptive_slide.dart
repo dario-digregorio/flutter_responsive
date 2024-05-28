@@ -5,6 +5,7 @@ class ReponsiveVsAdaptiveSlide extends FlutterDeckSlideWidget {
   const ReponsiveVsAdaptiveSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Responsive vs. Adaptive',
             route: '/responsive-vs-adaptive',
           ),
         );

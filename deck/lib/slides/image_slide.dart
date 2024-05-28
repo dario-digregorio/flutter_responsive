@@ -5,6 +5,7 @@ class ImageSlide extends FlutterDeckSlideWidget {
   const ImageSlide()
       : super(
           configuration: const FlutterDeckSlideConfiguration(
+            title: 'Let\'s build!?',
             route: '/image',
           ),
         );
