@@ -7,11 +7,11 @@ on:
 
 jobs:
     build-and-deploy:
+        runs-on: ubuntu-latest
         permissions:
             contents: write
-          concurrency:
+        concurrency:
             group: ${{ github.workflow }}-${{ github.ref }}
-        runs-on: ubuntu-latest
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
