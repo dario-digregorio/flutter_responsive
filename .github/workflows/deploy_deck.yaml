@@ -4,14 +4,21 @@ on:
     push:
         branches:
             - main
+    workflow_dispatch:
+
 
 jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
         permissions:
-            contents: write
+            contents: read
+            pages: write
+            id-token: write
         concurrency:
             group: ${{ github.workflow }}-${{ github.ref }}
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
@@ -23,8 +30,13 @@ jobs:
               run: |
                 cd deck
                 flutter build web --release
-            - name: Deploy to GitHub Pages
-              uses: peaceiris/actions-gh-pages@v3
+            - name: Setup Pages
+              uses: actions/configure-pages@v5
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
               with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: deck/build/web
+                # Upload entire repository
+                path: 'deck/build/web'
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
