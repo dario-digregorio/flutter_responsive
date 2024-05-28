@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 class ApproachSlide extends FlutterDeckSlideWidget {
@@ -16,16 +15,20 @@ class ApproachSlide extends FlutterDeckSlideWidget {
         headerBuilder: (context) => const FlutterDeckHeader(
               title: 'General Approach',
             ),
-        builder: (context) => const Padding(
-              padding: EdgeInsets.all(64),
+        builder: (context) => Padding(
+              padding: const EdgeInsets.all(64),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Image(image: AssetImage('approach.png')),
-                  SizedBox(height: 16),
                   Text(
+                      'The general approach on creating responsive widgets is explained in detailed by the Flutter Team:',
+                      style: Theme.of(context).textTheme.headlineMedium),
+                  const SizedBox(height: 32),
+                  const Image(image: AssetImage('approach.png')),
+                  const SizedBox(height: 16),
+                  const Text(
                       'Read more: https://docs.flutter.dev/ui/adaptive-responsive'),
-                  Text(
+                  const Text(
                       'Watch on YouTube: https://www.youtube.com/watch?v=LeKLGzpsz9I'),
                 ],
               ),

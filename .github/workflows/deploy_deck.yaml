@@ -1,0 +1,26 @@
+name: Deploy to GitHub Pages
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+            - name: Set up Flutter
+              uses: subosito/flutter-action@v2
+            - name: Install dependencies
+              run: flutter pub get
+            - name: Build web app
+              run: |
+                cd deck
+                flutter build web --release
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: deck/build/web

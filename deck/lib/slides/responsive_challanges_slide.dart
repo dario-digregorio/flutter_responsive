@@ -19,7 +19,7 @@ class ResponsiveChallengesSlide extends FlutterDeckSlideWidget {
           useSteps: true,
           items: const [
             'Many different Form Factors (Phone, Tablet, Desktop, Foldable, ...)',
-            'Notches, Cutouts, Punch holes',
+            'Notches, Cutouts, Punch holes, Dynamic Island',
             'Scaling UI and Text for accessibility',
             'Different behaviors for different platforms',
             'Supporting RTL and LTR languages',

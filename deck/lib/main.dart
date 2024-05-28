@@ -60,8 +60,10 @@ class FlutterDeckExample extends StatelessWidget {
       themeMode: ThemeMode.system,
       client: FlutterDeckWebClient(),
       configuration: const FlutterDeckConfiguration(
-          controls:
-              FlutterDeckControlsConfiguration(presenterToolbarVisible: true),
+          slideSize: FlutterDeckSlideSize.responsive(),
+          controls: FlutterDeckControlsConfiguration(
+            presenterToolbarVisible: false,
+          ),
           header: FlutterDeckHeaderConfiguration(
             showHeader: true,
             title: 'Responsive Design in Flutter',
@@ -93,10 +95,10 @@ class FlutterDeckExample extends StatelessWidget {
         Layout3Slide(),
         Layout3DemoSlide(),
         ApproachSlide(),
+        ReponsiveVsAdaptiveSlide(),
         AbstractSlide(),
         MeasureSlide(),
         BranchSlide(),
-        ReponsiveVsAdaptiveSlide(),
         TestingSlide(),
         BestPractisesSlide(),
         ThankYouSlide(),

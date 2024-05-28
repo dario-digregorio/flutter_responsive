@@ -20,6 +20,7 @@ class MeasureSlide extends FlutterDeckSlideWidget {
         padding: const EdgeInsets.all(64),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('MediaQuery',
                 style: Theme.of(context).textTheme.headlineLarge),
@@ -28,7 +29,7 @@ class MeasureSlide extends FlutterDeckSlideWidget {
 - Provides the size of the window
 - Should be used only for root Layout Widgets
 - Use  `sizeoOf` method to get the size to prevent unnecessary rebuilds
-''', style: Theme.of(context).textTheme.headlineSmall),
+''', style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(height: 16),
             Text('LayoutBuilder',
                 style: Theme.of(context).textTheme.headlineLarge),
@@ -36,16 +37,7 @@ class MeasureSlide extends FlutterDeckSlideWidget {
             Text('''
 - Provides the size of the parent widget
 - Should be generally used
-''', style: Theme.of(context).textTheme.headlineSmall),
-            const SizedBox(height: 16),
-            Text('Other Widgets',
-                style: Theme.of(context).textTheme.headlineLarge),
-            const SizedBox(height: 8),
-            Text('''
-- ConstrainedBox
-- FractionallySizedBox
-- ...
-''', style: Theme.of(context).textTheme.headlineSmall),
+''', style: Theme.of(context).textTheme.headlineMedium),
           ],
         ),
       ),

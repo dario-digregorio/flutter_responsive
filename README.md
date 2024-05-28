@@ -25,6 +25,10 @@ If you have any questions, feedback, or suggestions, feel free to reach out to m
     - [Screen-based Breakpoints](#screen-based-breakpoints)
     - [Device Segmentation](#device-segmentation)
     - [Style File](#style-file)
+    - [General Approach](#general-approach)
+      - [Abstract](#abstract)
+      - [Measure](#measure)
+      - [Branch](#branch)
   - [Basic Layout](#basic-layout)
     - [Layout Foundation](#layout-foundation)
     - [Building the Responsive Layout](#building-the-responsive-layout)
@@ -80,14 +84,14 @@ Before diving into coding, setting up the right device and understanding key con
 ### Recommended Emulators/Simulators or Devices
 Choose a device that you can test your app on:
 
-| Environment               | HotReload |        Resizable Window         | Text Scaling | UI Scaling |
-| ------------------------- | :-------: | :-----------------------------: | :----------: | :--------: |
-| Windows/Mac/Linux         |    Yes    |               Yes               |     Yes      |    Yes     |
-| Web                       |    No     |               Yes               |     Yes      |    Yes     |
-| Android Emulator          |    Yes    | Experimental (only breakpoints) |     Yes      |    Yes     |
-| iOS Simulator             |    Yes    |               No                |     Yes      |    Yes     |
-| iPadOS (Stage Manager)    |    Yes    |             Limited             |     Yes      |    Yes     |
-| MacOS (Designed for iPad) |    Yes    |               Yes               |      No      |     No     |
+| Environment               | HotReload |        Resizable Window         | Text Scaling | UI Scaling | Lib Compatibility |
+| ------------------------- | :-------: | :-----------------------------: | :----------: | :--------: | :---------------: |
+| Windows/Mac/Linux         |    Yes    |               Yes               |     Yes      |    Yes     |      Middle       |
+| Web                       |    No     |               Yes               |     Yes      |    Yes     |        Low        |
+| Android Emulator          |    Yes    | Experimental (only breakpoints) |     Yes      |    Yes     |       High        |
+| iOS Simulator             |    Yes    |               No                |     Yes      |    Yes     |       High        |
+| iPadOS (Stage Manager)    |    Yes    |             Limited             |     Yes      |    Yes     |       High        |
+| MacOS (Designed for iPad) |    Yes    |               Yes               |      No      |     No     |       High        |
 
 iPad Stage Manager:
 
@@ -146,6 +150,22 @@ bool get isDesktopDeviceOrWeb => kIsWeb || isDesktopDevice;
 
 ### Style File
 Having a style file with your app's colors, fonts, and text styles will help you maintain a consistent look and feel across your app. This will also help you in scaling your UI and text effectively when needed for different touch targets.
+
+### General Approach
+
+The general approach on creating responsive widgets is explained in detailed by the Flutter Team in their [Adaptive Responsive Guide](https://docs.flutter.dev/ui/adaptive-responsive). You can also watch the [Google I/O 2024 Talk]( https://www.youtube.com/watch?v=LeKLGzpsz9I). This is the approach in a nutshell.
+
+#### Abstract
+Identify the widgets that you plan to make responsive. 
+- Dialogs, both fullscreen and modal
+- Navigation UI, both rail and bottom bar
+- Custom layout, such as "is the UI area taller or wider?"
+
+#### Measure
+Measure the size of the widgets by using `MediaQuery` or `LayoutBuilder`. See the section [Builder vs MediaQuery](#builder-vs-mediaquery) to know more.
+
+#### Branch
+Decide what sizing breakpoints to use when choosing what version of the UI to display.
 
 ## Basic Layout
 We’ll be enhancing the classic Counter App to showcase responsive design in Flutter. The goal is to manage multiple counters and introduce a `master-detail` interface for larger screens. Take a look into the repository to find out how the different topics have been implemented in detail.

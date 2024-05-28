@@ -19,6 +19,7 @@ class AbstractSlide extends FlutterDeckSlideWidget {
               padding: const EdgeInsets.all(64),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Identify the widgets that you plan to make responsive.',
                       style: Theme.of(context).textTheme.headlineLarge),
@@ -29,7 +30,7 @@ class AbstractSlide extends FlutterDeckSlideWidget {
         - Navigation UI, both rail and bottom bar
         - Custom layout, such as "is the UI area taller or wider?"
         ''',
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ],
               ),

@@ -18,7 +18,7 @@ class DevicesTableSlide extends FlutterDeckSlideWidget {
           const FlutterDeckHeader(title: 'Devices Table'),
       builder: (context) => Markdown(
           styleSheet: MarkdownStyleSheet(
-            tableBody: const TextStyle(fontSize: 26),
+            tableBody: const TextStyle(fontSize: 24),
           ),
           padding: const EdgeInsets.all(32),
           selectable: true,
@@ -26,14 +26,14 @@ class DevicesTableSlide extends FlutterDeckSlideWidget {
 # What device should you use for testing your app with different screen sizes?
 
 
-| Environment               | HotReload |        Resizable Window         | Text Scaling | UI Scaling |
-| ------------------------- | :-------: | :-----------------------------: | :----------: | :--------: |
-| Windows/Mac/Linux         |    Yes    |               Yes               |     Yes      |    Yes     |
-| Web                       |    No     |               Yes               |     Yes      |    Yes     |
-| Android Emulator          |    Yes    | Experimental (only breakpoints) |     Yes      |    Yes     |
-| iOS Simulator             |    Yes    |               No                |     Yes      |    Yes     |
-| iPadOS (Stage Manager) [iOS Target]    |    Yes    |             Limited             |     Yes      |    Yes     |
-| MacOS (Designed for iPad) [iOS Target] |    Yes    |               Yes               |      No      |     No     |
+| Environment               | HotReload |        Resizable Window         | Text Scaling | UI Scaling | Lib Compatibility |
+| ------------------------- | :-------: | :-----------------------------: | :----------: | :--------: | :---------------: |
+| Windows/Mac/Linux         |    Yes    |               Yes               |     Yes      |    Yes     |      Middle       |
+| Web                       |    No     |               Yes               |     Yes      |    Yes     |        Low        |
+| Android Emulator          |    Yes    | Experimental (only breakpoints) |     Yes      |    Yes     |       High        |
+| iOS Simulator             |    Yes    |               No                |     Yes      |    Yes     |       High        |
+| iPadOS (Stage Manager)    |    Yes    |             Limited             |     Yes      |    Yes     |       High        |
+| MacOS (Designed for iPad) |    Yes    |               Yes               |      No      |     No     |       High        |
 
 # See the README.md for more details.
 '''),

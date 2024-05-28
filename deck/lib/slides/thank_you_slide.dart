@@ -17,19 +17,19 @@ class ThankYouSlide extends FlutterDeckSlideWidget {
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
+                  children: [
                     Text('Thank You!',
                         style: Theme.of(context).textTheme.displayLarge),
                     const SizedBox(height: 64),
                     Image.asset(
-                      'assets/qrcode_linkedIn.png',
+                      'assets/qrcode_github.png',
                       width: 250,
                     ),
-                    const SizedBox(height: 16),
-                    Text('Scan to know how to connect with me',
+                    const SizedBox(height: 32),
+                    Text('Scan to to connect with me',
                         style: Theme.of(context).textTheme.headlineMedium),
                     const SizedBox(height: 64),
-                    Text('You can find me on LinkedIn, GitHub, X and Medium!',
+                    Text('You can find me on LinkedIn, GitHub and X!',
                         style: Theme.of(context).textTheme.headlineMedium),
                   ]),
             ));
